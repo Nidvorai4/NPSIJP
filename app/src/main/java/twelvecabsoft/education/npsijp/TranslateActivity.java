@@ -85,8 +85,8 @@ public class TranslateActivity extends AppCompatActivity {
         LinearLayout L= findViewById(R.id.LayV);
         L.addView(ET);*/
 
-        RowrOwroW R = new RowrOwroW();
-        R.Add(this);
+        //RowrOwroW R = new RowrOwroW();
+        //R.Add(this);
 
     }
 }

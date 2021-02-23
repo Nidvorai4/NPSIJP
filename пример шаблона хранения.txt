@@ -1,0 +1,25 @@
+{
+  "R1":12345,
+  "S1":"хуй"
+  "Album": "Альбом",
+  "Artist": "Исполнитель",
+  "Hui" : "Her",
+  "RRRows": [
+    {
+      "RowEng": {
+        "Lyric": "Look"
+      },
+      "RowQuasiRu": {},
+      "RowRu": {}
+    },
+    {
+      "RowEng": {
+        "Lyric": "If you had"
+      },
+      "RowQuasiRu": {},
+      "RowRu": {}
+    }
+  ],
+  "Title": "Название"
+  }
+}

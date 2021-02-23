@@ -20,12 +20,14 @@ import java.util.Locale;
 //import com.google.android.material.api api.translate.Language;
 //import com.google.api.translate.Translate;
 
-public class OneRow extends androidx.appcompat.widget.AppCompatEditText {
+public class OneRow {//extends androidx.appcompat.widget.AppCompatEditText {
     public String Lyric;
+    public OneRow(String RowText){Lyric=RowText;}
 
-    public OneRow(Context context) {
+/*    public OneRow(Context context,String L) {
+
         super(context);
         setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)) ;
         
-    }
+    }*/
 }

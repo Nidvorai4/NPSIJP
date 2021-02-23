@@ -18,13 +18,13 @@ import java.text.BreakIterator;
 import java.util.Locale;
 
 
-public class RowrOwroW {
+public class RowrOwroWText {
     private OneRow RowEng;
     private OneRow RowQuasiRu;
     private OneRow RowRu;
-    private LinearLayout LL_EQR;
-    private WeakReference<TranslateActivity> wrActivity;
-    private ClickableSpan getClickableSpan(final String word) {
+    //private LinearLayout LL_EQR;
+    //private WeakReference<TranslateActivity> wrActivity;
+    /*private ClickableSpan getClickableSpan(final String word) {
         return new ClickableSpan() {
             String URL=null;
             final String mWord;
@@ -59,8 +59,8 @@ public class RowrOwroW {
                 super.updateDrawState(ds);
             }
         };
-    }
-    public void setClickable(OneRow OR) {
+    }*/
+    /*public void setClickable(OneRow OR) {
         //String definition = "Clickable words in text view ".trim();
         androidx.appcompat.widget.AppCompatEditText definitionView = OR;
         String definition = OR.getText().toString().trim();
@@ -79,8 +79,19 @@ public class RowrOwroW {
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         }
+    }*/
+    public RowrOwroWText(String EngL){
+        RowEng= new OneRow(EngL);
+        RowQuasiRu= new OneRow(null);
+        RowRu= new OneRow(null  );
     }
-    public void Add(TranslateActivity activity) {
+
+    public RowrOwroWText(String EngL, String QuL, String RuL){
+        RowEng= new OneRow(EngL);
+        RowQuasiRu= new OneRow(QuL);
+        RowRu= new OneRow(RuL);
+    }
+    /*public void Add(TranslateActivity activity) {
 
         wrActivity = new WeakReference<TranslateActivity>(activity);
         TranslateActivity act = wrActivity.get();
@@ -88,12 +99,12 @@ public class RowrOwroW {
         LL_EQR.setOrientation(LinearLayout.VERTICAL);
 
         RowEng= new OneRow(act);
-        RowEng.setText("ХУЙ eng");
+        RowEng.setText(EngL);
         setClickable(RowEng);
         RowQuasiRu= new OneRow(act);
-        RowQuasiRu.setText("ХУЙ          квази");
+        RowQuasiRu.setText(QuL);
         RowRu= new OneRow(act);
-        RowRu.setText("ХУЙ                               ру");
+        RowRu.setText(RuL);
 
         LL_EQR.addView(RowEng);
         LL_EQR.addView(RowQuasiRu);
@@ -105,5 +116,5 @@ public class RowrOwroW {
         // EditText myEditText = new EditText(context); // Pass it an Activity or Context
         //myEditText.setLayoutParams(new LayoutParams(..., ...)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
         //myLayout.addView(myEditText);
-    }
+    }*/
 }
