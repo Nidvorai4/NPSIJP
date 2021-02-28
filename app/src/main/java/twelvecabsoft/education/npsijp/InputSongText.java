@@ -41,9 +41,7 @@ public class InputSongText extends AppCompatActivity {
             //FileInputStream fin =  openFileInput("test.txt");
             //fin.
             //String Enc=fin.
-            int a;
-            char ca;
-            String S;
+            int a = 0;
             StringBuilder temp = new StringBuilder();
             while ((a = tmp.read()) != -1)
             {
@@ -78,11 +76,12 @@ public class InputSongText extends AppCompatActivity {
         if (pasteData!=null){
             SongText.setText(pasteData);
             String[] array = pasteData.split("\n", -1);
-
-            Song S=new Song("Исполнитель","Альбом", "Название",pasteData);
+            Song[] SS=new Song[2];
+            SS[0]=new Song("Исполнитель","Альбом", "Название",pasteData);
+            SS[1]=new Song("Ar","AL","Tit","text of song");
             //ProgSettings PS=new ProgSettings(321,"иди в хуй");
             Gson StoF =new GsonBuilder().setPrettyPrinting().create();
-            String res=StoF.toJson(S);
+            String res=StoF.toJson(SS);
 
 
 
@@ -113,9 +112,9 @@ public class InputSongText extends AppCompatActivity {
 
             res =readData();
 
-            Song S2= StoF.fromJson(res, Song.class);
+            Song[] SS2= StoF.fromJson(res, Song[].class);
                 res="dsasad";
-            S2.Artist ="";
+            SS2[1].Artist ="HUUUUUUUUUUI";
 
 
 
