@@ -1,5 +1,6 @@
 package twelvecabsoft.education.npsijp;
 
+import androidx.annotation.IntDef;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +34,18 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
     private RecyclerView rv_SongText;
     private RowsAdapter rowsAdapter;
 
+    private void MakeRV()
+    {
+        rv_SongText=findViewById(R.id.rv_rrrows);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        rv_SongText.setLayoutManager(layoutManager);
+        //rv_SongText.setHasFixedSize(true); знаем размер списка заранее (я не факт, что знаю). Повышает производительность
+        rowsAdapter =new RowsAdapter(CurSong);
+        rv_SongText.setAdapter(rowsAdapter);
+        //to do намутил ресайкл. Надо в нём создать три поля, кликабельные слова в первом и всю хуйню
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +53,6 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
         setContentView(R.layout.activity_main);
         LSongs=new ArrayList<Song>();
 
-        rv_SongText=findViewById(R.id.rv_rrrows);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        rv_SongText.setLayoutManager(layoutManager);
-        //rv_SongText.setHasFixedSize(true); знаем размер списка заранее (я не факт, что знаю). Повышает производительность
-        rowsAdapter =new RowsAdapter(100);
-        rv_SongText.setAdapter(rowsAdapter);
-        //todo намутил ресайкл. Надо в нём создать три поля, кликабельные слова в первом и всю хуйню
     }
 
     public void btnMenuOnClick(View view) {
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
 
         FileOutputStream fOut = null;
         try {
-            fOut = openFileOutput("test.txt",MODE_PRIVATE );
+            fOut = openFileOutput("test.txt", MODE_PRIVATE );
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -129,6 +135,7 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
                 if (pasteData!=null) {
                     CurSong = new Song("Артист", "Альбом", "Название", pasteData);
                 }
+                MakeRV();
                 return true;
             case R.id.menSaveAll :
                 SaveSongs();
@@ -141,7 +148,7 @@ public class MainActivity extends AppCompatActivity  implements PopupMenu.OnMenu
         //Toast.makeText(this,item.toString(),Toast.LENGTH_LONG).show();
        // return true;
         //switch (item)
-        //TODO загружается, создаётся, сохраняется. Надо мутить визуализацию едиттекстами текущей песни
+        //TO DO загружается, создаётся, сохраняется. Надо мутить визуализацию едиттекстами текущей песни
         //return false;
     }
 }

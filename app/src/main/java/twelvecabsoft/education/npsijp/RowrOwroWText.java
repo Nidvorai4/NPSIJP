@@ -1,27 +1,29 @@
 package twelvecabsoft.education.npsijp;
 
-import android.app.Dialog;
-import android.text.Spannable;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.util.Log;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.lang.ref.WeakReference;
-import java.text.BreakIterator;
-import java.util.Locale;
-
 
 public class RowrOwroWText {
     private OneRow RowEng;
-    private OneRow RowQuasiRu;
+    private OneRow RowQu;
     private OneRow RowRu;
+    static int R1=1;
+
+    public String getRowEng () {return RowEng.Lyric;}
+    public String getRowQu () {return RowQu.Lyric;}
+    public String getRowRu () {return RowRu.Lyric;}
+
+    public void setRowEng (String s){
+        RowEng.Lyric = s;
+    }
+    public void setRowQu (String s){
+        RowQu.Lyric = s;
+     }
+    public void setRowRu (String s){
+        RowRu.Lyric = s;
+    }
+
+
+
+
     //private LinearLayout LL_EQR;
     //private WeakReference<TranslateActivity> wrActivity;
     /*private ClickableSpan getClickableSpan(final String word) {
@@ -82,13 +84,13 @@ public class RowrOwroWText {
     }*/
     public RowrOwroWText(String EngL){
         RowEng= new OneRow(EngL);
-        RowQuasiRu= new OneRow(null);
+        RowQu = new OneRow(null);
         RowRu= new OneRow(null  );
     }
 
     public RowrOwroWText(String EngL, String QuL, String RuL){
         RowEng= new OneRow(EngL);
-        RowQuasiRu= new OneRow(QuL);
+        RowQu = new OneRow(QuL);
         RowRu= new OneRow(RuL);
     }
     /*public void Add(TranslateActivity activity) {
