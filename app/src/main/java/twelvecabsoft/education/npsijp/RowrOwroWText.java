@@ -5,23 +5,47 @@ public class RowrOwroWText {
     private OneRow RowEng;
     private OneRow RowQu;
     private OneRow RowRu;
-    static int R1=1;
+    //static int R1=1;
 
-    public String getRowEng () {return RowEng.Lyric;}
-    public String getRowQu () {return RowQu.Lyric;}
-    public String getRowRu () {return RowRu.Lyric;}
 
-    public void setRowEng (String s){
-        RowEng.Lyric = s;
-    }
-    public void setRowQu (String s){
-        RowQu.Lyric = s;
-     }
-    public void setRowRu (String s){
-        RowRu.Lyric = s;
+    public String getRowEng() {
+        return RowEng.Lyric == null ? "" : RowEng.Lyric;
     }
 
+    public String getRowQu() {
+        return RowQu.Lyric == null ? "" : RowQu.Lyric;
+    }
 
+    public String getRowRu() {
+        return RowRu.Lyric == null ? "" : RowRu.Lyric;
+    }
+
+
+    public void SetAnyRowText(String text, @Song.RowType int Type) {
+        switch (Type) {
+            case Song.RowType.ENG:
+                setRowEng(text);
+                break;
+            case Song.RowType.QU:
+                setRowQu(text);
+                break;
+            case Song.RowType.RU:
+                setRowRu(text);
+                break;
+        }
+    }
+
+    public void setRowEng(String s) {
+        RowEng.Lyric = s == null ? "" : s;
+    }
+
+    public void setRowQu(String s) {
+        RowQu.Lyric = s == null ? "" : s;
+    }
+
+    public void setRowRu(String s) {
+        RowRu.Lyric = s == null ? "" : s;
+    }
 
 
     //private LinearLayout LL_EQR;
@@ -82,16 +106,16 @@ public class RowrOwroWText {
             }
         }
     }*/
-    public RowrOwroWText(String EngL){
-        RowEng= new OneRow(EngL);
+    public RowrOwroWText(String EngL) {
+        RowEng = new OneRow(EngL);
         RowQu = new OneRow(null);
-        RowRu= new OneRow(null  );
+        RowRu = new OneRow(null);
     }
 
-    public RowrOwroWText(String EngL, String QuL, String RuL){
-        RowEng= new OneRow(EngL);
+    public RowrOwroWText(String EngL, String QuL, String RuL) {
+        RowEng = new OneRow(EngL);
         RowQu = new OneRow(QuL);
-        RowRu= new OneRow(RuL);
+        RowRu = new OneRow(RuL);
     }
     /*public void Add(TranslateActivity activity) {
 

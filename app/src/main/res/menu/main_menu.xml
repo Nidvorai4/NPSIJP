@@ -3,11 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menOpenSaved"
+        android:title="Открыть сохранённые" />
+    <item
         android:id="@+id/menStartNewTr"
         android:title="@string/mSNT" />
     <item
         android:id="@+id/menSaveAll"
         android:title="Сохранить" />
+    <item
+        android:id="@+id/menFromBuftoFile"
+        android:title="Буфер напрямую в файл" />
     <item
         android:id="@+id/app_bar_search"
         android:icon="@drawable/ic_search_black_24dp"

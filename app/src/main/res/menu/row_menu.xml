@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menR_editEN"
+        android:title="Редактировать EN" />
+    <item
+        android:id="@+id/menR_editQU"
+        android:title="Редактировать квази" />
+    <item
+        android:id="@+id/menR_editRU"
+        android:title="Редакторовать RU" />
+</menu>

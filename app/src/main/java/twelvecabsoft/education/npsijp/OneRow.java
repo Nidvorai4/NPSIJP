@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class OneRow {//extends androidx.appcompat.widget.AppCompatEditText {
     public String Lyric;
-    public OneRow(String RowText){Lyric=RowText;}
+    public OneRow(String RowText){if(RowText!=null) Lyric=RowText; else Lyric="";}
 
 /*    public OneRow(Context context,String L) {
 
